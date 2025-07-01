@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 
 
@@ -12,8 +11,10 @@ function App() {
 
   
   return (
-    <div className="flex flex-col items-center px-4">
-      {/* Paso props al input */}
+    <div className="min-h-screen bg-no-repeat bg-cover bg-center " 
+    style={{ backgroundImage: "url('/gif-back/art.gif')" }}
+    >
+      
       <Inputcard history={history} setHistory={setHistory} />
 
       

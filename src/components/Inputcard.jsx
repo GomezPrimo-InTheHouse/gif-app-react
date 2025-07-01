@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
-import Historial from "./Historial";
+
+
 
 
 
@@ -34,6 +35,8 @@ const Inputcard = ({ history, setHistory }) => {
             const response = await axios.get("https://yesno.wtf/api");
             setGifUrl(response.data.image);
 
+            // seteamos el historial
+
             setHistory(prev => [
                 ...prev.slice(-9), // solo las últimas 9
                 {
@@ -54,7 +57,7 @@ const Inputcard = ({ history, setHistory }) => {
 
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-white p-4">
+        <div className="flex items-center justify-center min-h-screen p-4">
             <div className="bg-white p-6 rounded-2xl shadow-lg w-full max-w-md text-center mb-4">
                 <h2 className="text-2xl font-bold mb-6 text-gray-800">Haz tu pregunta</h2>
 
@@ -109,18 +112,6 @@ const Inputcard = ({ history, setHistory }) => {
                     </p>
                 )}
 
-                {/* {gifUrl && (
-                    <div className="mt-6">
-                        <h3 className="text-lg font-medium mb-2 text-gray-700">Respuesta:</h3>
-                        <img
-                            src={gifUrl}
-                            alt="Respuesta GIF"
-                            className="mx-auto rounded-lg max-w-full h-auto"
-                        />
-                    </div>
-                )}
-                
-                */}
 
 
                 {loading ? (
