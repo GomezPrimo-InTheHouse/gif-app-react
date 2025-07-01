@@ -27,6 +27,7 @@ const Inputcard = ({ history, setHistory }) => {
         const value = e.target.value;
         setInputValue(value);
         setIsValid(validateQuestion(value));
+        
     };
 
     const handleSubmit = async () => {
@@ -50,6 +51,7 @@ const Inputcard = ({ history, setHistory }) => {
             setGifUrl(null);
         } finally {
             setLoading(false);
+            setInputValue("")
         }
     };
 
